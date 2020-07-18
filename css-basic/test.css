@@ -1,0 +1,184 @@
+/* CSS 기본 Syntex */
+/* selector {
+    property: value;
+} */
+
+/* Selectors */
+/* 1.Type Selector(html tag selector) */
+p {
+    color: red;
+}
+
+strong {
+    color: red;
+}
+
+/* 2.Class Selector */
+/* <div class="box">
+     요소 
+    </div> */
+
+    .box {
+        color: aliceblue;
+    }
+
+/* <div class="box-0 box-1 box-2">
+     3개의 클래스 
+    </div> */
+    .box {
+
+    }
+    .box-1 {
+
+    }
+    .box-2 {
+
+    }
+    .box.box-1 {
+
+    }
+    .box-0.box-2 {
+
+    }
+    .box-1.box-2 {
+
+    }
+    .box-0.box-1.box-2 {
+
+    }
+/* 3.ID Selector */
+/* <div id="jonghyeon">
+     id는 단 한개만 선언 할 수 있습니다. 
+    </div> */
+    #honghyeon {
+        color: aliceblue;
+    }
+
+    /* Child(자식 선택자), Descendant(자손 선택자) & Sibling Combinators(형제 선택자) */
+    /* 1.Child(parent > child) */
+    section > h1 {
+        color: aliceblue;
+    }
+    /* 2.Descendant(parent descendants) */
+    section h1 {
+        color: aliceblue;
+    }
+    /* 3.Sibling Combinators */
+    /* 3-1.parent ~ sibling(active class 기준 하여 모든 li 형제 색깔 red로 변경) */
+    .active ~ li {
+        color: red;
+    }  
+
+    /* 3-2.parent + sibling(active class 기준 하여 다음 li 형제 하나만 색깔 red로 변경) */
+    .active + li {
+        color: red;
+    }
+    
+    /* 4.Structural Pseudo-classes(가상 클래스) */
+    /* 4-1. element:first-child */
+    li:first-child {
+        color:red;
+    }
+    /* 4-2. element:last-chbild */
+    li:last-child {
+        color: azure;
+    }
+    /* 4-3. element:nth-child(n) */
+    li:nth-child(3) {
+        color: red;
+    }
+
+    /* 5.User Action Pseudo-classes */
+    /* 5--1.element:hover(마우스를 갔다 댔을때) */
+    a:hover {
+        background-color: blueviolet;
+    }
+    /* 5-2.element:focus(요소를 클릭했을때 focus되었을때 text-box생각하면 됨) */
+    input:focus {
+        background-color: red;
+    }
+
+    /* 5-3.element:active(마우스를 클릭했을때) */
+    a:active {
+        background-color: aquamarine;
+    }
+
+    /* 5-4: style breaker
+    1.inline style
+    2.!important */
+
+
+    /* 6.BOX model */
+    /* 1.margin
+    2.padding
+    3.border
+    4.content     */
+
+    /* 7.BOX Sizing */
+    * {
+        /* 기본값 */
+        box-sizing: content-box;
+        /* border-box = border영역까지 가로 세로 */
+    }
+
+    /* 8. Box */
+    /* Box-Type => display */
+
+    /* 8-1: Block(길막) */
+    /* 따로 width를 선언하지 않을 경우, width=부모의 content-box의 100% */
+    /* 따로 width를 선언한 경우, 남은 공간은 margin으로 자동으로 채움 */
+    /* margin: 0 auto */
+
+
+
+
+
+    
+    /* 따로 부모의 height를 선언하지 않을 겨우, 자식 요소의 height의 합 = 부모의 height */
+
+    /* 8-2: Inline(흐름) */
+    /* margin padding border(top, bottom) 사용 금지 */
+
+    /* 8-3: Inline Block(block + inline) */
+
+    /* 9. float(가로배치) */
+   /* float을 할 시 inline-block, inline이든 block으로 신분 변환한다. 하지만 block의 기능 margin은 생성되지 않는다 
+   즉(길막)을 하진 못한다. 또한 부모는 자식들의 합 만큼 높이를 가지고 있으며 float 사용시 자식은 붕 뜨기 때문에 그만큼
+   높이가 감소한다.*/
+   
+   /* float fix*/
+    /*overflow:hidden => 부모가 집나간 자식을 찾는다.  */
+    /* clear(left, right, both) => display가 항상 block 상태여야만 합니다. */
+
+    /* @@@@꿀팁 가상요소 만들기@@@@ */
+    /* ::befor, ::after(필수요소 : content) */
+    .presudo::befor {
+        content: "@";
+    }
+
+    /* 10. position(원하는 위치에 자유롭게 이동시키기 위함) */
+    /* 1.static
+    모든 요소의 기본 포지션 값 */
+
+    /* 2.relative
+    float과 는 다르게 자기 자신의 자리를 기억하고 있으며 위아래(top, bottom, right, left) 이동 가능 */
+
+    /* 3.absolute
+    3-1 display는 block로 변환 됨. 다른 영역에 지장안줌
+    3-2 자신이 기준점을 삶고 싶은 기준을 정할수 있습니다. 기준점은 포지션이 static이 아닌 요소 */
+
+    /* 4.fixed */
+    /* 4-1.absolute와 동일함
+    4-2.absolute와 다른점은 자신의 기준점이 명확합니다. viewport기준이며 그위치에 고정  */
+
+    /* 5.z-index
+    포지션 요소 수직방향 레벨 위치를 알려줍니다. 
+    ex z-index : 1
+    ex z-index : 2 => 1앞으로 수직으로 올라감
+    */
+
+    /* @@@@@@꿀팁 transform */
+    /* 위치선정시 사용하며 요소 변형*/
+
+    /* @@@@@@꿀팁 text-align */
+    /* 글자위치 선정 */

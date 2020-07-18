@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  
+  a {
+    font-size: 18px;
+    line-height: 20px;
+    color: #8492a6;
+    text-decoration: none;
+  }
+  /* ul {
+    list-style-type:none;
+    width: 540px;
+    height: 54px;
+    padding: 17px;
+    border: 1px solid #18a0fb;
+  }
+
+  ul:hover {
+    border: 1px solid #04121b;
+  }
+
+  ul::after {
+    display: block;
+    clear: left;
+  }
+
+  li {
+    float: left;
+    margin-right: 30px;
+  }
+
+  li:nth-child(2) {
+    padding-bottom: 13px;
+    border-bottom: 3px solid #2860e1;
+  } */
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+  }
+    
+    .tab-menu {
+      max-width: 540px;
+      background-color: white;
+      border-bottom: 1px solid #e5eaef;
+    }
+
+    /* 가상요소 만들기 */
+    .tab-menu::after {
+      content: "";
+      display: block;
+      clear: left;
+    }
+
+  .tab-menu-item {
+    float: left;
+    margin-right: 16px;
+  }
+
+  .tab-menu-item a {
+    display: block;
+    padding: 16px 20px;
+  }
+
+  .tab-menu-item.selected {
+    border-bottom: 2px solid #2860E1;
+  }
+
+  .tab-menu-item.selected a {
+    color: #2860E1;
+    font-weight: 500;
+  }
