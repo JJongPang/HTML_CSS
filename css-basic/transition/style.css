@@ -1,0 +1,47 @@
+/* ▼ WHERE YOUR CODE BEGINS */
+* {
+    box-sizing: border-box;
+    margin: 0;;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+button,
+input,
+textarea {
+    font-family: 'Lato', sans-serif;
+}
+
+button {
+    border: none;
+    background-color: white;
+}
+
+.line-button {
+    position: relative;
+    padding: 18px 30px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #151B26;
+    cursor: pointer;
+}
+
+.line-button::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    content: "";
+    position: absolute;
+    background-color: blue;
+    transition: all 250ms ease-out;
+}
+
+.line-button:hover::after {
+    content: '';
+    width: 100%;
+    background-color: hotpink;
+}

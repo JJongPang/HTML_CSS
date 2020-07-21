@@ -1,0 +1,79 @@
+/* ▼ WHERE YOUR CODE BEGINS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 216px;
+}
+
+.loading-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3333333333;
+    color: #151B26;
+    animation: flicker 1600ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.progress-bar {
+    position: relative;
+    width: 300px;
+    height: 12px;
+    background-color: #E5EAEF;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.progress-bar-gauge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #13CE66;
+    animation-name: uploading;
+    animation-duration: 1600ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes flicker {
+    form {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes uploading {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    90% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}    

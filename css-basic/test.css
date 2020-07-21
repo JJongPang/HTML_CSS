@@ -207,6 +207,8 @@ strong {
         /* nowrap(기본값)(사이즈를 줄여서라도 한줄로 정렬) | wrap(줄 변경 하며 정렬) */
     }
 
+    /* @@flex-grow 플렉스 후 남은 공간 을 차지할 것인지?@@ */
+
     /* order */
     /* 원하는데로 순서 매김 */
 
@@ -226,3 +228,148 @@ strong {
     }
 
     /* Typography */
+    /* 텍스트 디자인 */
+    /* 1.Essentials
+    1-1. line-height(줄간격) - px, *em*, rem => 줄간격에 가운데 배치(em 생략)
+    1-2. letter-spacing(글자와 글자사이 자간) px, *em*
+    1-3. font-size - 글씨 크기(px(절대 단위), em(상대단위, 실제로 적용된 폰트사이즈), rem(상대단위, html에 적용된 em))(em 생략 안됨)
+    1-4. baseline
+    1-5. font-family(폰트 서체) => 서체
+    1-6. font-weigth(폰트 굵기) => 400(regular) 700(bold) 900(black)
+    1-7. color(글자 색상) => hex(#0066f), rgb(0, 102, 255), rgba(0, 102, 255, 1(투명도))
+    
+    2.etc
+    2-1. text-align - 텍스트 정렬(left, center, right)
+    2-2. text-indent - 들여쓰기(px)
+    2-3. text-transform - 텍스트 변환(none, capitalize(앞자리 대문자), uppercase(대문자), lowercase(소문자))
+    2-4. text-decoration - none, under-line, line-through, overline
+    2-5. font-style - normal, *italic(기울기)*, oblique
+    
+    3. Webfont 
+    3-1. 직접 가져다 사용하기
+    3-2. 직접 쓰기 */
+    @font-face {
+        font-famaily: "사용자 직접 입력";
+        font-style: "normal";
+        font-weight: 400;
+        src:  url("경로") format("사용자 확장자 환경");
+    }
+
+    /* Background
+    1. background-color = <hex, rgb, rgba>
+    2. background-image = url("경로")
+    3. background-repeat = 이미지 => repeat(기본 갑), no-repeat(반복 원하지 않는 경우)
+    4. background-size = 이미지 사이즈 => contain, cover, custom
+    5. background-position = 이미지 위치 => x, y  */
+
+    /* Transition(property 속성에 맞게 휙 바뀌는게 아닌 스르륵 전환 하는 것)
+    property(css속성), duration(지속시간<ms, s>), [timing-function](ease-in, ease-out, ease-in-out, cubic-bezier(커스텀)), [delay]
+    
+    ex) */
+    .box {
+        background-color: blue;
+        font-size: 10px;
+        transition: all 2500ms cubic-benzier(0.08, 0.57, 0.97, -0.78) 1000ms;
+        transition: font-size  2500ms ease-in, background-color 2500ms cubic-benzier(0.08, 0.57, 0.97, -0.78) 1000ms;
+    }
+
+    .box.active {
+        font-size: 30px;
+        background-color: pink;
+    }
+
+
+
+    /* animation */
+    /* <Transition 동일, iteration-count(되풀이를 몇번할거냐)(infinite무한대)>, direction(방향지정)<alternate> 왔다갔다(from to, to from from to.....) */
+
+    .box {
+        position: relative;
+        background-color: black;
+        animation-name: name;
+        animation-duration: 2000ms;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1000ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
+    @keyframes name {
+        from {
+            /* rule */
+            top: 0;
+            background-color: black;
+        }
+
+        to {
+            /* rule */
+            top: 200px;
+            background-color: pink;
+        }
+    } 
+
+    @keyframes name {
+        0% {
+            /* rule */
+        }
+
+        50% {
+            /* rule */
+        }
+
+        100% {
+            /* rule */
+        }
+    } 
+
+
+    /* Boxs Shadow(neomorphism) */
+    h-offset, v-offset, blur, spread, color
+    x y 흐린정도(blur) 그림자 사이즈 색상
+    box-shadow: 0 10px 16px 0 rgba(19, 206, 102, 0.35)
+
+    /* opacity */
+    /* 투명도 */
+
+    /* overflow */
+    /* with, height 자손요소들이 넘쳤을때의 처리  */
+    /* visible: 기본값
+    auto, scroll: 넘쳐흘렀을때 알아서 처리해라, 알아럿 scroll 표시해라(overflow-x, overflow-y)
+    hittder: 넘쳐흘렀을때 싹 잘라서 숨겨버려라 */
+
+
+    /* Transform */
+    /* 모형 변환 */
+    translate(x, y)이동하기 전 위치를 기억하며 내가 원하는 방향으로 옮기는 법(자기 사이즈가 기준)
+    scale(N), scale(x, y) 자기 사이즈 조정
+    rotate(Ndeg) 각도조절 => ex)rotate(45deg)
+
+    /* Visible */
+    보여줄거냐, 안보여 줄거냐
+    visible: 보여주기
+    hidden: 없애기
+
+
+
+    /* Grid System */
+    디자이너들이 디자인 할 때 사용하는 것
+
+    container: 전체 범위
+
+    column: 1칸 
+
+    gutter: 컬럼에 여백주기
+
+
+
+    /* Bootstrap */
+    /* 그리드 시스템 프레임 워크 */
+    /* 규칙 */
+    <div class="container">
+       <div class="row">
+           <div class="col-1">
+               <p>col-1</p>
+           </div>
+       </div>
+    </div>
+
