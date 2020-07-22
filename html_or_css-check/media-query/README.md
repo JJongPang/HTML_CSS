@@ -1,4 +1,4 @@
-# flexbox practice
+# Media Query practice
 Mida Query 이용한 기본 반응형 웹(min-width: 768px)
 
 ### Screenshot
