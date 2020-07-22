@@ -1,7 +1,7 @@
 # flexbox practice
 flexbox를 이용한 기본 Menu
 
-Screenshot
+### Screenshot
 
 
 

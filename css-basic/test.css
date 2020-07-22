@@ -324,9 +324,9 @@ strong {
 
 
     /* Boxs Shadow(neomorphism) */
-    h-offset, v-offset, blur, spread, color
+    /* h-offset, v-offset, blur, spread, color
     x y 흐린정도(blur) 그림자 사이즈 색상
-    box-shadow: 0 10px 16px 0 rgba(19, 206, 102, 0.35)
+    box-shadow: 0 10px 16px 0 rgba(19, 206, 102, 0.35) */
 
     /* opacity */
     /* 투명도 */
@@ -340,36 +340,36 @@ strong {
 
     /* Transform */
     /* 모형 변환 */
-    translate(x, y)이동하기 전 위치를 기억하며 내가 원하는 방향으로 옮기는 법(자기 사이즈가 기준)
+    /* translate(x, y)이동하기 전 위치를 기억하며 내가 원하는 방향으로 옮기는 법(자기 사이즈가 기준)
     scale(N), scale(x, y) 자기 사이즈 조정
-    rotate(Ndeg) 각도조절 => ex)rotate(45deg)
+    rotate(Ndeg) 각도조절 => ex)rotate(45deg) */
 
     /* Visible */
-    보여줄거냐, 안보여 줄거냐
+    /* 보여줄거냐, 안보여 줄거냐
     visible: 보여주기
-    hidden: 없애기
+    hidden: 없애기 */
 
 
 
     /* Grid System */
-    디자이너들이 디자인 할 때 사용하는 것
+    /* 디자이너들이 디자인 할 때 사용하는 것
 
     container: 전체 범위
 
     column: 1칸 
 
-    gutter: 컬럼에 여백주기
+    gutter: 컬럼에 여백주기 */
 
 
 
     /* Bootstrap */
     /* 그리드 시스템 프레임 워크 */
     /* 규칙 */
-    <div class="container">
+    /* <div class="container">
        <div class="row">
            <div class="col-1">
                <p>col-1</p>
            </div>
        </div>
-    </div>
+    </div> */
 
