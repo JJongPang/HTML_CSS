@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Card</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="product-card">
+            <div class="product-card-image">
+                <img src="https://user-images.githubusercontent.com/19285811/69318246-becd7980-0c77-11ea-8324-6c43e2de8cf2.png" alt="" />
+            </div>
+            <div class="product-card-title">
+                <h1>혼자가 혼자에게</h1>
+                <strong aria-label="오늘의 책 선정"> 오늘의 책 </strong>
+            </div>
+
+            <strong aria-label="저자 이병률" class="product-card-author"> 이병률 </strong>
+
+            <!-- aria-hidden 스크린상이나 브라우저에 중요한 내용이 아니기 때문에 즉 스크린 
+            리더로 읽었을때 감추고 싶거나 읽고 싶지 안을때  -->
+            <strong aria-label="평점 9.4" class="product-card-review">
+                <span aria-hidden="true">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </span>
+                <i class="fas fa-star-half-alt"></i>
+                9.4
+            </strong>
+        </div>
+    </body>
+</html>
