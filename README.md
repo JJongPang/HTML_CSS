@@ -405,6 +405,175 @@ InlineBlock
 
 <br/>
 
+## FlexBox
+## Flexbox
+Flex는 요소의 크기가 불분명하거나 동적인 경우에도, 각 요소를 정렬할 수 있는 효율적인 방법을 제공합니다.
+
+우선 Flex는 2개의 개념으로 나뉩니다.
+첫 번째는 Container 두 번째는 Items 입니다.
+위에서 살펴본 바와 같이 Container는 Items를 감싸는 부모 요소이며, 각 Item을 정렬하기 위해선 Container가 필수입니다.
+
+주의할 부분은 Container와 Items에 적용하는 속성이 구분되어 있다는 것입니다.
+Container에는 display, flex-flow, justify-content 등의 속성을 사용할 수 있으며,
+Items에는 order, flex, align-self 등의 속성을 사용할 수 있습니다.
+
+![](https://images.velog.io/images/whdvkf92/post/6d36a297-168c-4cea-95db-08c32bc47a41/flex.JPG)
+
+
+## Flex Container
+Flex Container를 위한 속성들은 다음과 같습니다.
+주 축(main-axis)과 교차 축(cross-axis)의 개념은 뒤에서 살펴봅시다.
+
+- display: Flex Container를 정의
+- flex-flow: flex-direction와 flex-wrap의 단축 속성
+- flex-direction: Flex Items의 주 축(main-axis)을 설정
+- flex-wrap: Flex Items의 여러 줄 묶음(줄 바꿈) 설정
+- justify-content: 주 축(main-axis)의 정렬 방법을 설정
+- align-content: 교차 축(cross-axis)의 정렬 방법을 설정(2줄 이상)
+- align-items: 교차 축(cross-axis)에서 Items의 정렬 방법을 설정(1줄)
+
+### display
+display 속성으로 Flex Container를 정의합니다.
+보통 요소의 표시 방법을 display: block;, display: inline-block 혹은 display: none; 같이 사용하는 경우가 많죠.
+같은 요소의 표시 방법으로 Block이나 Inline이 아닌 Flex(display: flex, display: inline-flex)로 정의합니다.
+
+- flex: Block 특성의 Flex Container를 정의	
+- inline-flex: Inline 특성의 Flex Container를 정의
+
+flex와 inline-flex는 차이는 단순합니다.
+display: flex;로 지정된 Flex Container는 Block 요소와 같은 성향(수직 쌓임)을 가지며,
+display: inline-flex로 지정된 Flex Container는 Inline(Inline Block) 요소와 같은 성향(수평 쌓임)을 가집니다.
+
+여기서 말하는 수직과 수평 쌓임은 Items가 아니라 Container라는 것에 주의합시다.
+두 값의 차이는 내부에 Items에는 영향을 주지 않습니다.![](https://images.velog.io/images/whdvkf92/post/df5a9f60-2df1-465b-a69a-024e1ef963ba/flex-1.JPG)
+
+
+### flex-flow
+이 속성은 단축 속성으로 Flex Items의 주 축(main-axis)을 설정하고 Items의 여러 줄 묶음(줄 바꿈)도 설정합니다.
+
+```css
+flex-flow: 주축 여러줄묶음;
+
+.flex-container {
+  flex-flow: row-reverse wrap;
+}
+```
+- flex-direction: Items의 주 축(main-axis)을 설정
+	row : Itmes를 수평축(왼쪽에서 오른쪽으로)으로 표시
+	row-reverse : Items를 row의 반대 축으로 표시
+	column : Items를 수직축(위에서 아래로)으로 표시
+	Items를 column의 반대 축으로 표시
+```css
+flex-direction: 주축;
+```
+![](https://images.velog.io/images/whdvkf92/post/069069d7-099f-4fd1-a040-a6d6575952f5/flex-2.JPG)
+
+주 축(main-axis)과 교차 축(cross-axis)
+위에서 언급했었던 주 축(main-axis)과 교차 축(cross-axis)의 개념은 다음과 같습니다.
+값 row는 Items를 수평축으로 표시하므로 이때는 주 축이 수평이며 교차 축은 수직이 됩니다.
+반대로 값 column은 Items를 수직축으로 표시하므로 주 축은 수직이며 교차 축은 수평이 됩니다.
+즉, 방향(수평, 수직)에 따라 주 축과 교차 축이 달라집니다.
+
+![](https://images.velog.io/images/whdvkf92/post/9155d31b-2fcf-4231-9c42-797e74da1336/flex-3.JPG)
+
+시작점(flex-start)과 끝점(flex-end)
+시작점(flex-start)과 끝점(flex-end)이라는 개념도 있습니다.
+이는 주 축이나 교차 축의 시작하는 지점과 끝나는 지점을 지칭합니다.
+역시 방향에 따라 시작점과 끝점이 달라집니다.
+![](https://images.velog.io/images/whdvkf92/post/0b35558b-0e4e-4342-9867-dedfb12297ef/flex-4.JPG)
+![](https://images.velog.io/images/whdvkf92/post/b4d4dc9a-50de-4df7-bdb3-c788059bc94c/flex-5.JPG)
+뒤에서 언급할 속성 중 값으로 flex-start와 flex-end를 사용하는데 이는 방향에 맞는 그 시작점과 끝점을 의미합니다.
+
+- flex-wrap: Items의 여러 줄 묶음(줄 바꿈) 설정	
+	nowrap: 모든 Itmes를 여러 줄로 묶지 않음(한 줄에 표시)	nowrap
+	wrap: Items를 여러 줄로 묶음	
+	wrap-reverse: Items를 wrap의 역 방향으로 여러 줄로 묶음	
+```css
+flex-wrap: 여러줄묶음;
+```
+![](https://images.velog.io/images/whdvkf92/post/93776d07-bf45-41ee-9700-9c5666a66638/flex-6.JPG)
+
+### justify-content
+주 축(main-axis)의 정렬 방법을 설정합니다.
+- flex-start: Items를 시작점(flex-start)으로 정렬	flex-start
+- flex-end: Items를 끝점(flex-end)으로 정렬	
+- center: Items를 가운데 정렬	
+- space-between: 시작 Item은 시작점에, 마지막 Item은 끝점에 정렬되고 나머지 Items는 사이에 고르게 정렬됨	
+- space-around: Items를 균등한 여백을 포함하여 정렬
+```css
+justify-content: 정렬방법;
+```
+![](https://images.velog.io/images/whdvkf92/post/e3e1603d-b8ab-42cc-a0f1-d0f055229d73/flex-7.JPG)
+
+### align-content
+교차 축(cross-axis)의 정렬 방법을 설정합니다.
+주의할 점은 flex-wrap 속성을 통해 Items가 여러 줄(2줄 이상)이고 여백이 있을 경우만 사용할 수 있습니다.
+- stretch: Container의 교차 축을 채우기 위해 Items를 늘림	stretch
+- flex-start: Items를 시작점(flex-start)으로 정렬	
+- flex-end: Items를 끝점(flex-end)으로 정렬	
+- center: Items를 가운데 정렬	
+- space-between: 시작 Item은 시작점에, 마지막 Item은 끝점에 정렬되고 나머지 Items는 사이에 고르게 정렬됨	
+- space-around: Items를 균등한 여백을 포함하여 정렬
+![](https://images.velog.io/images/whdvkf92/post/fcc5eab2-17b6-4ca4-9554-a9e7a5f3d52f/flex-8.JPG)
+
+### align-items
+교차 축(cross-axis)에서 Items의 정렬 방법을 설정합니다.
+Items가 한 줄일 경우 많이 사용합니다.
+
+주의할 점은 Items가 flex-wrap을 통해 여러 줄(2줄 이상)일 경우에는 align-content 속성이 우선합니다.
+따라서 align-items를 사용하려면 align-content 속성을 기본값(stretch)으로 설정해야 합니다.
+- stretch: Container의 교차 축을 채우기 위해 Items를 늘림	stretch
+- flex-start: Items를 각 줄의 시작점(flex-start)으로 정렬	
+- flex-end: Items를 각 줄의 끝점(flex-end)으로 정렬	
+- center: Items를 가운데 정렬	
+- baseline: Items를 문자 기준선에 정렬
+![](https://images.velog.io/images/whdvkf92/post/a6db9357-ef96-4082-a5e8-0500ccaf2bfc/flex-9.JPG)
+
+### Flex Items
+Flex Items를 위한 속성들은 다음과 같습니다.
+
+- order: Flex Item의 순서를 설정
+- flex: flex-grow, flex-shrink, flex-basis의 단축 속성
+- flex-grow: Flex Item의 증가 너비 비율을 설정
+- flex-shrink: Flex Item의 감소 너비 비율을 설정
+- flex-basis: Flex Item의 (공간 배분 전) 기본 너비 설정
+- align-self: 교차 축(cross-axis)에서 Item의 정렬 방법을 설정
+
+#### order
+Item의 순서를 설정합니다.
+Item에 숫자를 지정하고 숫자가 클수록 순서가 밀립니다.
+음수가 허용됩니다.
+```css
+order: 순서;
+```
+
+#### flex
+Item의 너비(증가, 감소, 기본)를 설정하는 단축 속성입니다.
+
+- flex-grow:Item의 증가 너비 비율을 설정
+- flex-shrink: Item의 감소 너비 비율을 설정
+- flex-basis: Item의 (공간 배분 전) 기본 너비 설정
+```css
+flex: 증가너비 감소너비 기본너비;
+```
+```css
+.item {
+  flex: 1 1 20px;  /* 증가너비 감소너비 기본너비 */
+  flex: 1 1;  /* 증가너비 감소너비 */
+  flex: 1 20px;  /* 증가너비 기본너비 (단위를 사용하면 flex-basis가 적용됩니다) */
+}
+```
+flex-grow를 제외한 개별 속성은 생략할 수 있습니다.
+만약 flex: 1;로 작성하면 flex-grow: 1;과 같습니다.
+그러면 나머지 속성은 생략했으니 기본값이 적용되어 flex-shrink: 1;, flex-basis: auto;가 되겠죠?
+즉 flex: 1; 혹은 flex: 1 1;은 flex: 1 1 auto;와 같다고 볼 수 있습니다만 그렇지 않습니다.
+
+flex-basis의 기본값은 auto입니다만 단축 속성인 flex에서 그 값을 생략할 경우 0이 적용됩니다.
+다시 정리하면 flex: 1; 혹은 flex: 1 1;은 flex: 1 1 0;이 된다는 것입니다.
+이 부분을 기억하지 않으면 엉뚱한 결과가 나올 수 있으니 주의합시다!
+
+<br />
+
 ## MediaQuey
 CSS Media Query는 예를 들어 "뷰포트가 480 픽셀보다 넓다."라고 여러분이 지정한 규칙에 브라우저 및 장치 환경이 일치하는 경우에만 CSS를 적용할 수 있는 방법을 제공합니다. 미디어 쿼리는 반응형 웹 디자인의 핵심 부분이다. 뷰포트의 크기에 따라 서로 다른 스크린을 생성할 수 있기 때문이다.
 
@@ -443,46 +612,25 @@ CSS Media Query는 예를 들어 "뷰포트가 480 픽셀보다 넓다."라고 �
 
 (1) 스타일 종류
 
-
-
-	1) 글자
-
+	1. 글자
 	가. font-family
-
 	나. font-size
-
 	다. line-height
-
 	라. font-weight
-
 	마. font-style
-
 	바. font-variant
 
-
-
-
-	2) 문단
-
+	2. 문단
 	가. text-align(인라인 요소의 가로정렬 셋팅)
-
 	나. text-indent(들여쓰기)
-
 	다. text-decoration(글자장식 밑줄)
-
 	라. text-transform(대문자 소문자)
-
 	마. vertical-align(인라인 요소의 수직위치 정렬)
-
 	바. letter-spacing(자간)
-
 	사. word-spacing(단어와 단어사이)
-
 	아. white-space(공백문자처리)
-
 	자. word-break(줄바꿈처리)
     
-
 (2) font-family
 
 - 웹페이지의 글꼴지정
