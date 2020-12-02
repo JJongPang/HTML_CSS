@@ -1,335 +1,334 @@
-# HTML, CSS Study
+# HTML, CSS 
 
 <br/>
 
-## MarkDown 처음 사용기
-
-MarkDown이라함은 Git을 사용하는 사람들은 누구나 보고있다. 현재 지금 이 글을 읽고 있는 당신도 이미 경험을 하고 있다.
-<br/>
-현재 파일명만 보아도 간단하게 알 수있다. `README`라는 파일이름의 `.md` 확장자를 가진 파일이 존재한다. `README`라는 파일이름은 GitHub에서 기본으로 보여줄 MarkDown의 파일이름이다.
-<br/>
-그렇다면 우리가 이렇게 보는 MarkDown파일은 어떻게 작성하는 것인가?
-<br/>
-
-## 마크다운이란
-
-1. 마크다운(Markdown)은 일반 텍스트 문서의 양식을 편집하는 문법이다. README 파일이나 온새라인 문서, 혹은 일반 텍스트 편집기로 문서 양식을 편집할 때 쓰인다. 마크다운을 이용해 작성된 문서는 쉽게 HTML 등 다른 문서형태로 변환이 가능하다.
-2. 존 그루버는 2004년에 문법 면에서 에런 스워츠와 중대한 협업을 통해 마크다운 언어를 만들었으며, 사람들이 읽기 쉽고 쓰기 쉬운 플레인 텍스트 포맷을 사용하여 쓸 수 있으면서 구조적으로 유효한 XHTML(또는 HTML)로 선택적 변환이 가능하게 하는 것이 목표였다고 한다.
-
-<br/>
-
-> [참조 위키피디아 : Markdown](http://https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4)
-
-<br/>
-
-## 마크다운 사용법(문법)
+## HTML 사용법(문법)
 
 ### Contents
 
-- [Headers](#headers)
-- [글머리](#글머리)
-- [BlockQuote(인용구)](#BlockQuote)
-- [목록(List)](#목록)
-- [코드(Code)](#코드)
-- [수평선](#수평선)
-- [링크(Link)](#링크)
-- [강조](#강조)
-- [이미지](#이미지)
-- [테이블](#테이블)
-- [숨김, 열림](#숨김-열림)
-- [YouTube](#Youtube)
-
-
-## Headers
-
-- 흔히 **제목을 적을 때 사용하는 문법** 이다.
-- 큰제목 : 문서 제목(ex. How to use Markdown)
-- 작은제목 : 문서 부제목 (ex. 마크다운이란?, 마크다운 사용법(문법)등등)
-- 글머리 : 1 ~ 6까지만 지원을 한다. (HTML의 H1~H6와 비슷)
+- [Anchor](#anchor)
+- [Image](#image)
+- [목록 List](#list)
+- [정의 리스트 Description List](#description)
+- [인용 Quotations](#quotations)
+- [Form 태그](#form)
+- [표 Table](#table)
+- [Media](#media)
 
 <br/>
 
-### 큰제목
+## Anchor
+현 위치에서 다른 위치로 이동
 
-- 가장 큰 제목을 쓰는 경우 흔히 한 번만 사용한다.
+## Anchor(Target="_blank")
+새 탭 후 해당 위치로 이동
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anchor</title>
+    </head>
+    <body>
+        <h1>Be Really Excellent</h1>
+        <h2>구름EDU 클라우드 SW교육환경</h2>
+        <p>
+            스크래치3, 엔트리부터 파이썬, C언어까지 설치가 전혀 필요없고
+            <br />
+            강력한 LMS와 연동된 SW교육환경이 눈앞에 펼쳐집니다.
+            <br />
+            누구나 SW에 대한 지식과 경험을 나눌 수 있고, 누구나 SW를 배울 수 있는 환경! 지금 경험해보세요!
+            <br />
+            <br />
+        </p>
+        <a
+            href="https://edu.goorm.io/learn/lecture/20583/%EA%B9%80%EB%B2%84%EA%B7%B8%EC%9D%98-html-css%EB%8A%94-%EC%9E%AC%EB%B0%8C%EB%8B%A4/lesson/976524/%EB%A7%81%ED%81%AC-anchor/image/1"
+        >
+            서비스 바로가기
+        </a>
 
-```md
-  // Version 0.70이상에서는 이 페이지에서 사용하지 않음
-  나만의 MarkDown(마크다운) 사용법
-  ===============================
+        <br />
+        <br />
+        <br />
+        <a href="https://github.com/JJongPang?tab=repositories" target="_blank">
+            <h1>Subscribe Jonghyeon</h1>
+            <p>이 배너를 클릭하시면 이종현의 git 이동합니다.</p>
+        </a>
+    </body>
+</html>
 ```
-
-하지만 이 방법보다는 `#` 하나를 사용하는 방법을 추천하고 싶다.
-
-:point_right: **Example**
-
-나만의 MarkDown(마크다운) 사용법
-===============================
-
----
-
-### 작은제목
-
-- 큰 제목 다음으로 분류를 할때 사용한다.
-
-```md
-  // Version 0.70이상에서는 이 페이지에서 사용하지 않음
-  마크다운이란?
-  -------------
-```
-
-하지만 이 방법보다는 `#` 두 개 사용하는 방법을 추천하고 싶다.
-
-:point_right: **Example**
-
-마크다운이란?
--------------
-
----
-
-### 글머리
-
-- HTML을 공부를 하셨다면 **H1 ~ H6**이라고 생각하면 쉽습니다.
-- 1 ~ 6까지만 지원을 합니다.
-- Code가 보이는 곳은 작게 보이지만 실제로 실행해보면 크기가 다릅니다.( `#` 을 적고 한칸 띄어야 합니다.)
-
-```md
-  # This is a H1
-  ## This is a H2
-  ### This is a H3
-  #### This is a H4
-  ##### This is a H5
-  ###### This is a H6
-```
-
-:point_right: **Example**
-
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
 
 <br/>
 
----
-
-## BlockQuote
-
-- 다른 사람이 말한 것을 차용할때 사용합니다.
-- `>` 를 사용해서 표현합니다.
-- `>` `>>` `>>>` 단계적으로 깊이 사용할 수 있습니다.
-- 인용문구 안에서 마크다운 요소를 포함할 수 있습니다.
+## Image
+이미지 태그
 
 ```md
-  > 1. 우주를 놀라게 하자!
-  > 2. 해군이 아니라 해적이 되어라!
-  > 3. 평생 설탕물만 팔건가요?
-  > 4. 나의 비즈니스 모델은 비틀즈다.
-  > 5. 창의력은 연결하는 능력이다.
-  > 6. 좋아하는 일을 해라!
-  > 7. 항상 갈망하라, 무모할 만큼!!
-  > 8. 죽음을 상기하라.
-  > 9. 여정은 보상이다.
+<img src="" alt="" />
 ```
-
-:point_right: **Example**
-
-> 1. 우주를 놀라게 하자!
->> 2. 해군이 아니라 해적이 되어라!
->>> 3. 평생 설탕물만 팔건가요?
-> 4. 나의 비즈니스 모델은 비틀즈다.
-> 5. 창의력은 연결하는 능력이다.
-> 6. 좋아하는 일을 해라!
-> 7. 항상 갈망하라, 무모할 만큼!!
-> 8. 죽음을 상기하라.
-> 9. 여정은 보상이다.
-
-[참조 : 스티브잡스 9가지 명언](http://bonlivre.tistory.com/382)
-<br/>
-
----
-
-## 목록
-
-- 순서가 있는 목록(번호)
-- 순서가 없는 목록(글머리 기호)
 
 <br/>
 
-### 1. 순서가 있는 목록(번호)
-
-- 순서있는 목록은 숫자와 점을 사용합니다.
-- 순서를 변경해서 적더라도 자동으로 내림차순으로 만들어 줍니다.
-
+## List
+ul과 ol의 자식 요소는 무조간 li만 가능
+#### ul
+순서가 중요하지 않은 목록
+```html
+<ul>
+	<li>항목</li>
+   	<li>항목</li>
+</ul>
 ```
-1. 첫번째
-  1. 첫번째 안에 첫번째
-2. 세번째
+#### ol
+순서가 중요한 목록
+```html
+<ol>
+	<li>항목</li>
+   	<li>항목</li>
+</ol>
 ```
-
-:point_right: **Example**
-
-1. 첫번째
-	1. 첫번째 안에 첫번째
-2. 세번째
 
 <br/>
 
----
+## Description
+- 용어를 정의할 때 사용하는 정의리스트
+- key-value로 정보를 제공할 때
 
-### 2. 순서가 없는 목록(글머리 기호)
 
-- `*`, `+`, `-` 중에서 어느 것을 사용해도 적용이 됩니다.
-- 혼합을 해서 사용해도 적용이 됩니다.
-
+태그정의
+```md
+dl(description list), 
+dt(description term), 
+dd(description data), 
+dfn
 ```
 
-* 첫번째
-  + 첫번째 안에 첫번째
-- 세번째
+예제
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description List</title>
+</head>
+<body>
+    
+<!-- 예제1 -->
+<dl>
+    <dt>
+        <h1>학습 學習 [학씁]</h1>
+    </dt>
+    <dd>
+        1. noun 배워서 익힘.
+    </dd>
+    <dd>
+        2. noun 심리 경험의 결과로 나타나는, 비교적 지속적인 행동의 변화나 그 잠재력의 변화. 또는 지식을 습득하는 과정
+    </dd>
+</dl>
 
+<!-- 예제2 -->
+<dl>
+    <dt>OPEN</dt>
+    <dd>월요일</dd>
+    <dd>화요일</dd>
+    <dd>수요일</dd>
+    <dd>목요일</dd>
+    <dd>금요일</dd>
+
+    <dt>CLOSE</dt>
+    <dd>토요일</dd>
+    <dd>일요일</dd>
+    <dd>공휴일</dd>
+</dl>
+
+<!-- 예제3 -->
+<dl>
+    <div>
+        <dt>USERNAME</dt>
+        <dd>김버그</dd>
+    </div>
+    <div>
+        <dt>EMAIL</dt>
+        <dd>JONG-HYEOIN@JONGHYEON.com</dd>
+    </div>
+    <div>
+        <dt>PASSPORT#</dt>
+        <dd>M@@@@@@@@@@</dd>
+    </div>
+    <div>
+        <dt>NATIONALITY</dt>
+        <dd>Republic of Korea</dd>
+    </div>
+</dl>
+
+</body>
+</html>
 ```
-
-:point_right: **Example**
-
-* 첫번째
-	+ 첫번째 안에 첫번째
-- 세번째
 
 <br/>
 
-## 코드
+## Quotations
+```md
+<blockquote cite="https://www.naver.com">인용내용</blockquote>
+<cite>인용 출처</cite>
+<q></q>
+```
 
-- `<pre></pre>` 또는 `<code></code>`를 사용해서 표현합니다.
-- 간락하게 <code>\`\`</code>(백틱)을 사용합니다.
-- 다수의 줄을 입력할 경우 <code>\`\`\`</code> (코드입력 공간) <code>\`\`\`</code>을 사용합니다.
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Quotations</title>
+    </head>
+    <body>
+        <blockquote>
+            우리가 겪을 수 있는 가장 아름다운 체험은 신비다.<br />
+            신비는 모든 참 예술과 과학의 근원이다.<br />
+            <cite>- 알버트 아인슈타인</cite>
+        </blockquote>
+
+        <blockquote cite=" https://bit.ly/2mvSYrT">
+            <p>
+                The study is the first to project the long-term outlook for Antarctica's largest penguins, which can grow 1.2 meters (four
+                ft) tall, seeking to fill a gap in understanding climate change and wildlife in one of the remotest parts of the planet.
+            </p>
+            <p>
+                Overall, numbers were set to fall by at least 19 percent from current levels by 2100 as sea ice melts. And two-thirds of
+                colonies of the birds, which have distinctive golden head patches, would decline by more than half, it said.
+            </p>
+
+            <p>
+                <q>It's not happy news for the emperor penguin</q>,said Hal Castellan of the U.S. Woods Hole Oceanographic Institution, a
+                co-author of the study in the journal Nature Climate Change.
+            </p>
+            <cite>
+                “Emperor Penguin Population to Slide Due to Climate Change”, Scientific American, June 29, 2014, https://bit.ly/2mvSYrT
+            </cite>
+        </blockquote>
+    </body>
+</html>
+```
+
+<br />
+
+## Form
+사용자로부터 Input을 받기 위한 태그
 
 ```md
-  \```
-    This is a code block.
-  \```
+<form action="API주소" method="GET/POST"></form>
 ```
 
-:point_right: **Example**
-
-```
-  This is a code block.
-```
-
----
-
-## 수평선
-
-- 아래의 코드들은 **수평선**을 만듭니다.
-- 마크다운 문서를 미리보기로 출력할때 페이지 나누기 용도로 사용됩니다.
-
+## Input
+입령창, input field
 ```md
-  ***
-  * * *
-  ---
-  --------------
-  ___
+<input type="?" placeholder="이름" minlength="5" maxlength="13" required value="???" />
+
+attribute
+1.placeholder = 입력창 문구
+2.minlength = 최소 길이
+3.maxlength = 최대 길이
+4.required = 무조건 입력
+5.value = 기본값
+
+type
+1.text
+2.email
+3.password
+4.url
+5.number(min, max)
+6.file(accept=".png, .jpeg")
 ```
 
-:point_right: **Example**
 
-***
-* * *
----
---------------
-___
-
-<br/>
-
----
-
-## 링크
-
-- 다른 페이지로 이동할 수 있도록 해줍니다.
-- 참조 링크
-- 인라인 링크
-- 자동연결
-
-### 1. 참조링크
-
+## Label
+폼 양식에 이름을 붙이는 태그
 ```md
-  [link keyword][id]
-  Link: [Google][googlelink]
+<label for="user-name">이름</label>
+<input id="user-name" type="text" />
 ```
 
-### 2. 인라인 링크
-
+## Radio & Checkbox
+Radio box 단일 선택
 ```md
-  syntax: [Title](link)
+<input id="subscribed" name="subscribed" value="subscribed" type="radio" />
+<label for=subscribed">구독중</label>
+<input id="unsubscribed" name="subscribed" value="unsubscribed" type="radio" />
+<label for=unsubscribed">구독 취소</label>
 ```
 
-:point_right: **Example**
-
-[Google](https://www.google.com/)
-
-### 3. 자동연결
-
+Checkbox 다중 선택
 ```md
-  <http://example.com/>
-  <abcd@example.com>
+<input type="checkbox" name="skills" value="html" id="html" />
+<label for="html">html</label>
+<input type="checkbox" name="skills" value="css" id="css" />
+<label for="css">css</label>
+<input type="checkbox" name="skills" value="js" id="js" />
+<label for="js">js</label>
+<input type="checkbox" name="skills" value="react" id="react" />
+<label for="react">react</label>
 ```
 
-:point_right: **Example**
-
-<https://www.google.com/>
-
-### 목차 만들기(링크 활용)
-
-링크를 응용해서 한페이지 내에서 이동하는 목차를 만들겠습니다.
-
-- [MarkDown 처음 사용기](#MarkDown-처음-사용기)
-- [참조링크](#1.-참조링크)
-- [인라인 링크](#2.-인라인-링크)
-- [자동연결](#3.-자동연결)
-
-만들때 주의할 점은 띄어쓰기는 `-`로 대체합니다.
-
----
-
-## 강조
-
-- 내가 강조하고 싶은 한부분을 진하게, 기울이기, 중간라인 등등을 할 수 있습니다.
-
+## Select & Option
 ```md
-  **rendered as bold text**
-  _rendered as italicized text_
-  ~~Strike through this text.~~
+<label for="skills">스킬</label>
+<select name="skills" id="skills">
+	<option value="html">HTML</option>
+	<option value="css">CSS</option>
+	<option value="javascript">JavaScript</option>
+</select>
 ```
 
-:point_right: **Example**
-
-- **rendered as bold text**
-- *rendered as italicized text*
-- ~~Strike through this text.~~
-
----
-
-## 이미지
-
+## Textarea
 ```md
-![Alt text](/asset/images/imgName.jpg)
-![Alt text](/asset/images/imgName.jpg "Optional title")
+<textarea name="" id="" cols="30" rows="10"></textarea>
 ```
 
-:point_right: **Example**
+## Buttons
+```md
+<button type="submit/button/reset">제출하기</button>
+```
 
-![테스트 이미지](https://github.com/SeonHyungJo/How_to_use_MarkDown/blob/master/asset/images/testName.jpg?raw=true "Optional title")
+<br />
 
----
+## Table
+```md
+<table>
+	<tr>
+ 		<th>테이블 헤더</th>
+        <td>테이블 데이터</td>
+ 	</tr>
+</table>
 
-## 테이블
+*attribute
+테이블 헤더 표시 tag
+<thead></thead>
 
-- 테이블은 필요하더라...
-- 테이블을 그리는 방법
-- header 그리는 방법
-- 왼쪽 정렬, 오른쪽 정렬, 가운데 정렬을 하는 방법
+테이블 데이터 표시 tag
+<tbody></tbody>
+
+테이블에 최종 결과물 tag
+<tfoot></tfoot>    
+```
+
+<br />
+
+## Media
+```md
+<audio src="" controls></audio>
+<video src="" controls></video>
+<!-- iframe -->
+<!-- 임베디드 할 때 -->
+<iframe src="https://edu.goorm.io" frameborder="0"></iframe>
+
+*attribute
+controls = audio 컨트롤러
+autoplay = 자동재생
+loop autoplay = 무한 반복 재생
+```
 
 ### 1. 테이블 그리기
 
